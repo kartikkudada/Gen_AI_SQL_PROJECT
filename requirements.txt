@@ -1,0 +1,5 @@
+python-dotenv
+langchain
+langchain-community
+mysql-connector-python
+sqlalchemy
