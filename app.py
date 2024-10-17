@@ -29,9 +29,12 @@ print(another_variable)
 
 
 try:
+    ## generate code langchain connnect to MySQL database
+
+
     db_url = "mysql+mysqlconnector://root:admin@localhost:3306/mydatabase"
     print(db_url)
-    #db = SQLDatabase.from_uri(db_url)
+    db = SQLDatabase.from_uri(db_url)
     #print(f"get tables {db.get_table_names()}")
     #result = db.execute('select count(*) from mydatabase.athlete')
     #print(f"type {result.data[0][0]}")
@@ -39,5 +42,8 @@ except Exception as e:
     print("Error connecting to the database:")
     print(e.with_traceback())
     print(traceback.format_exc())
-    exit(1)
-
+except ConnectionRefusedError  as e:
+    print("runtime error")
+    print(e.with_traceback())
+except NameError  as e:
+    print("Name error")    
