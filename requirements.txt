@@ -3,3 +3,5 @@ langchain
 langchain-community
 mysql-connector-python
 sqlalchemy
+google-generativeai
+langchain-google-genai
